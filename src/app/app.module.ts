@@ -18,6 +18,7 @@ import { AddSalleComponent } from './Components/add-salle/add-salle.component';
 import { ListeSallesComponent } from './Components/liste-salles/liste-salles.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
+import { UpdateSalleComponent } from './Components/update-salle/update-salle.component';
 
 
 
@@ -31,7 +32,8 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterAdminComponent,
     HomePageAdminComponent,
     AddSalleComponent,
-    ListeSallesComponent
+    ListeSallesComponent,
+    UpdateSalleComponent
   ],
   imports: [
     BrowserModule,

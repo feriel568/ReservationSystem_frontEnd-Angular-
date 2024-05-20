@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 import { SalleListService } from 'src/app/Services/salle-list.service';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -11,13 +11,15 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 })
 export class ListeSallesComponent {
   salles: any[] = [];
+  selectedSalle: any = null;
+
   errorMessage: string = '';
   successMessageDel: string = '';
-
+  successMessageUpdate: string = '';
   faEdit = faEdit;
   faTrash = faTrash;
 
-  constructor(private salleService: SalleListService , private toastr: ToastrService) { }
+  constructor(private salleService: SalleListService , private router: Router ) { }
 
   ngOnInit(): void {
     this.salleService.getAllSalles().subscribe(
@@ -35,10 +37,13 @@ export class ListeSallesComponent {
     );
   }
 
+ 
   onUpdate(salle: any): void {
-    // Implement update logic here
-    console.log('Update', salle);
+    this.router.navigate(['/update-salle', salle._id]);
   }
+
+
+
 
   onDeleteSalle(id: string): void {
     this.salleService.deleteSalle(id)

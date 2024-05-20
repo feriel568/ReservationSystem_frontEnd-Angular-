@@ -8,6 +8,7 @@ import { LoginAdminComponent } from './Components/login-admin/login-admin.compon
 import { HomePageAdminComponent } from './Components/home-page-admin/home-page-admin.component';
 import { AddSalleComponent } from './Components/add-salle/add-salle.component';
 import {ListeSallesComponent} from './Components/liste-salles/liste-salles.component';
+import { UpdateSalleComponent } from './Components/update-salle/update-salle.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'admin/login', component: LoginAdminComponent },
   { path: 'admin/home', component: HomePageAdminComponent },
   { path: 'salle/add' , component:AddSalleComponent},
-  { path: 'salle/admin/list' , component:ListeSallesComponent}
+  { path: 'salle/admin/list' , component:ListeSallesComponent},
+  { path: 'update-salle/:id', component: UpdateSalleComponent }
 
 ];
 

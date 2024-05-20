@@ -1,0 +1,42 @@
+<app-home-page-admin></app-home-page-admin>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="successMessageUpdate" class="alert alert-success">
+    {{ successMessageUpdate }}
+  </div>
+  
+  <form (ngSubmit)="onSubmitUpdate()" class="updateForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input [(ngModel)]="salle.name" name="name" class="form-control" id="name" />
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input [(ngModel)]="salle.location" name="location" class="form-control" id="location" />
+    </div>
+    <div class="mb-3">
+      <label for="capacity" class="form-label">Capacity</label>
+      <input [(ngModel)]="salle.capacity" name="capacity" class="form-control" id="capacity" />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea [(ngModel)]="salle.description" name="description" class="form-control" id="description"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="days" class="form-label">Days</label>
+      <input [(ngModel)]="salle.days" name="days" class="form-control" id="days" />
+    </div>
+    <div class="mb-3">
+      <label for="startTime" class="form-label">Start Time</label>
+      <input [(ngModel)]="salle.startTime" name="startTime" class="form-control" id="startTime" />
+    </div>
+    <div class="mb-3">
+      <label for="endTime" class="form-label">End Time</label>
+      <input [(ngModel)]="salle.endTime" name="endTime" class="form-control" id="endTime" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update Salle</button>
+  </form>
+  

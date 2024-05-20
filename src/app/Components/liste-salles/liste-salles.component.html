@@ -1,0 +1,50 @@
+<app-home-page-admin></app-home-page-admin>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="successMessageDel" class="salleDel">
+  {{ successMessageDel }}
+</div>
+
+<div *ngIf="!errorMessage && salles.length === 0" class="noSalle">
+  <p>Aucune salle n'est disponible pour le moment.</p>
+</div>
+
+<table *ngIf="salles.length > 0" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Capacity</th>
+      <th>Description</th>
+      <th>Days</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let salle of salles">
+      <td>{{ salle.name }}</td>
+      <td>{{ salle.location }}</td>
+      <td>{{ salle.capacity }}</td>
+      <td>{{ salle.description }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let day of salle.days">{{ day }}</li>
+        </ul>
+      </td>
+      <td>{{ salle.startTime }}</td>
+      <td>{{ salle.endTime }}</td>
+      <td>
+        <button (click)="onUpdate(salle)" class="btn btn-link">
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </button>
+        <button (click)="onDeleteSalle(salle._id)" class="btn btn-link">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

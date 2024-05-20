@@ -1,0 +1,45 @@
+<app-home-page-admin></app-home-page-admin>
+
+
+<div class="formBox">
+  <h2>Add New Salle</h2>
+  <form [formGroup]="salleForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+    <div>
+      <label for="capacity">Capacity:</label>
+      <input type="number" id="capacity" formControlName="capacity" />
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location" />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+    <div>
+      <label>Days:</label><br />
+      <div *ngFor="let day of days; let i = index">
+        <input type="checkbox" [formControl]="getDayControl(i)" />
+        <label>{{ day }}</label><br />
+      </div>
+    </div>
+    
+    
+    <div>
+      <label for="startTime">Start Time:</label>
+      <input type="time" id="startTime" formControlName="startTime" />
+    </div>
+    <div>
+      <label for="endTime">End Time:</label>
+      <input type="time" id="endTime" formControlName="endTime" />
+    </div>
+    
+    <button type="submit">Submit</button>
+  </form>
+  <div *ngIf="successMessage">{{ successMessage }}</div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>

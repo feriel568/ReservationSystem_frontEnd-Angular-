@@ -23,8 +23,10 @@
 
   margin-left:15%;
 
-  border: 1px solid black !important;
-  background-color:rgb(14, 57, 14) ;
-  width: 150px;
-  color: white;
+  
+ }
+
+ .alert {
+  margin-left: 15%;
+  width: 80%;
  }

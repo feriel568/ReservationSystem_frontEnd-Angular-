@@ -1,10 +1,18 @@
-<h2>Login</h2>
-<form (submit)="login()">
-  <label for="username">Username:</label>
-  <input type="text" id="username" [(ngModel)]="credentials.Username" name="username" required>
-
-  <label for="password">Password:</label>
-  <input type="password" id="password" [(ngModel)]="credentials.password" name="password" required>
-
-  <button type="submit">Login</button>
-</form>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card p-5" style="width: 400px;">
+    <h2 class="text-center mb-4">Login</h2>
+    <form (submit)="login()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="credentials.Username" name="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="credentials.password" name="password" required>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

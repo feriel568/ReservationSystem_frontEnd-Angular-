@@ -19,6 +19,7 @@ import { ListeSallesComponent } from './Components/liste-salles/liste-salles.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdateSalleComponent } from './Components/update-salle/update-salle.component';
+import { AllSallesUserComponent } from './Components/all-salles-user/all-salles-user.component';
 
 
 
@@ -33,7 +34,8 @@ import { UpdateSalleComponent } from './Components/update-salle/update-salle.com
     HomePageAdminComponent,
     AddSalleComponent,
     ListeSallesComponent,
-    UpdateSalleComponent
+    UpdateSalleComponent,
+    AllSallesUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,23 @@
-<div class="sidenav">
-    <p class="ha">Hello admin</p>
-    <a routerLink="/salle/add">Ajout salle</a>
-    <a routerLink="/salle/admin/list" >Salles</a>
-    <a>Reservations</a>
-    <a>Logout</a>
+<div class="sidenav shadow-sm">
+  <div class="text-center py-3 border-bottom">
+    <i class="fas fa-user-cog fa-2x"></i>
+    <p class="h4 mt-2 mb-0">Hello Admin</p>
+  </div>
+  <a routerLink="/salle/add" class="nav-link">
+    <i class="fas fa-plus-circle"></i>
+    <span class="ml-2">Ajout salle</span>
+  </a>
+  <a routerLink="/salle/admin/list" class="nav-link">
+    <i class="fas fa-list"></i>
+    <span class="ml-2">Salles</span>
+  </a>
+  <a class="nav-link">
+    <i class="fas fa-calendar-alt"></i>
+    <span class="ml-2">Reservations</span>
+  </a>
+  <a (click)="logout()" class="nav-link">
+    <i class="fas fa-sign-out-alt"></i>
+    <span class="ml-2">Logout</span>
+  </a>
+</div>
 
-  </div>
-  
-  <div class="main">
-    <!-- Your main content here -->
-  </div>
-  

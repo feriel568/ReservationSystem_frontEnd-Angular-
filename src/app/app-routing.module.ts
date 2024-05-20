@@ -9,13 +9,13 @@ import { HomePageAdminComponent } from './Components/home-page-admin/home-page-a
 import { AddSalleComponent } from './Components/add-salle/add-salle.component';
 import {ListeSallesComponent} from './Components/liste-salles/liste-salles.component';
 import { UpdateSalleComponent } from './Components/update-salle/update-salle.component';
-
+import { AllSallesUserComponent} from './Components/all-salles-user/all-salles-user.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'app/pages/home', component: HomePageUserComponent },
+  { path: 'home', component: AllSallesUserComponent },
   { path: 'admin/register', component: RegisterAdminComponent },
   { path: 'admin/login', component: LoginAdminComponent },
   { path: 'admin/home', component: HomePageAdminComponent },

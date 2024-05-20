@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Nom de l'application</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!errorMessage && salles.length === 0" class="alert alert-info">
+  <p>Aucune salle n'est disponible pour le moment.</p>
+</div>
+
+<h1 class="h1 text-primary">Salles disponibles</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let salle of salles" class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ salle.name }}</h5>
+        <p class="card-text">{{ salle.location }}</p>
+        <p class="card-text">Capacity: {{ salle.capacity }}</p>
+        <p class="card-text">{{ salle.description }}</p>
+        <h6>Days:</h6>
+        <ul class="list-unstyled">
+          <li *ngFor="let day of salle.days">{{ day }}</li>
+        </ul>
+        <p class="card-text">Start Time: {{ salle.startTime }}</p>
+        <p class="card-text">End Time: {{ salle.endTime }}</p>
+        <div class="btn-group">
+          <button class="btn btn-primary">Réserver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

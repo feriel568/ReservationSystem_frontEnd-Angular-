@@ -28,7 +28,7 @@ export class LoginComponent {
           alert('Login successful');
 
           // Redirect to home page after successful login
-          this.router.navigate(['/app/pages/home']);
+          this.router.navigate(['/home']);
         } else {
           alert(response.message);
         }
